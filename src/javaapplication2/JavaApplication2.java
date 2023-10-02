@@ -20,10 +20,12 @@ public class JavaApplication2 {
     }
     
     private void indit() {
+        int szam = 0;
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
-            melyik();
+            szam = melyik();
+            kever(szam);
         }
         ezVolt();
     }
@@ -43,18 +45,24 @@ public class JavaApplication2 {
     
     
     private void kirak() {
+        int i = 0;
         for (String elem : Pakli) {
-            System.out.printf("%s ", elem);
+            System.out.printf("%s   ", elem);
+            i++;
+            if (i >= 3) {
+                System.out.println("");
+                i = 0;
+            }
         }
     }
     
-    private void melyik() {
+    private int melyik() {
         int szam = 0;
         do {            
             System.out.print("Melyik: ");
             szam = sc.nextInt();
         } while (szam < 1 && szam > 3);
-        kirak(szam);
+        return szam;
     }
     
     private void kever(int i) {
