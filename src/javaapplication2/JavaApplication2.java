@@ -9,12 +9,52 @@ package javaapplication2;
  * @author szendefi.k.daniel
  */
 public class JavaApplication2 {
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    String Pakli[] = new String[22];
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        new JavaApplication2().indit();
+    }
+    
+    private void indit() {
+        feltolt();
+        for (int i = 0; i < 3; i++) {
+            kever();
+            melyik();
+        }
+        ezVolt();
+    }
+    
+    private void feltolt() {
+        String formak[] = {"ász", "also", "felso", "x", "ix", "viii"};
+        String szinek[] = {"piros", "zöld", "tök", "makk"};
+        
+        for (int j = 0; j < Pakli.length; j++) {
+            int i = 0;
+            for (int k = 0; k < szinek.length; k++) {
+                Pakli[j] = szinek[k] +;
+            }
+        }
+        kirak();
+        
+    }
+    
+    private void kirak() {
+        for (String elem : Pakli) {
+            System.out.printf("%s ", elem);
+        }
+    }
+    
+    private void melyik() {
+        
+    }
+    
+    private void kever() {
+        
+    }
+    
+    private void ezVolt() {
+        System.out.printf("Ez volt: %s.", Pakli[11]);
     }
     
 }
