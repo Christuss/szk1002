@@ -22,7 +22,7 @@ public class JavaApplication2 {
     private void indit() {
         feltolt();
         for (int i = 0; i < 3; i++) {
-            kever();
+            kirak();
             melyik();
         }
         ezVolt();
@@ -31,13 +31,13 @@ public class JavaApplication2 {
     private void feltolt() {
         String formak[] = {"ász", "also", "felso", "x", "ix", "viii"};
         String szinek[] = {"piros", "zöld", "tök", "makk"};
-        for (String e : szinek) {
-            for (int i = 0; i < formak.length; i++) {
-                Pakli[i] = e + "_" + formak[i];
+        int i = 0;
+        for (String ertek : szinek) {
+            for (int j = 0; i < 22 && j < formak.length; j++) {
+                Pakli[i++] = ertek + "_" + formak[j];
             }
         }
-        kirak();
-        }
+    }
         
         
     
@@ -51,13 +51,32 @@ public class JavaApplication2 {
     private void melyik() {
         int szam = 0;
         do {            
-            System.out.println("Melyik: ");
+            System.out.print("Melyik: ");
             szam = sc.nextInt();
         } while (szam < 1 && szam > 3);
+        kirak(szam);
     }
     
-    private void kever() {
-        
+    private void kever(int i) {
+        String ujPakli[] = new String[22];
+        switch (i) {
+            case 1:
+                ujPakli[1-7] = Pakli[20-(i-1)*3];
+                ujPakli[7-14] = Pakli[19-(i-1)*3];
+                ujPakli[14-21] = Pakli[21-(i-1)*3];
+                break;
+            case 2:
+                ujPakli[1-7] = Pakli[21-(i-1)*3];
+                ujPakli[7-14] = Pakli[19-(i-1)*3];
+                ujPakli[14-21] = Pakli[20-(i-1)*3];
+                break;
+            case 3:
+                ujPakli[1-7] = Pakli[19-(i-1)*3];
+                ujPakli[7-14] = Pakli[21-(i-1)*3];
+                ujPakli[14-21] = Pakli[20-(i-1)*3];
+                break;
+        }
+        Pakli = ujPakli;
     }
     
     private void ezVolt() {
