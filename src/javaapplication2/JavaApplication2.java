@@ -4,6 +4,8 @@
  */
 package javaapplication2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author szendefi.k.daniel
@@ -11,6 +13,7 @@ package javaapplication2;
 public class JavaApplication2 {
     
     String Pakli[] = new String[22];
+    Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
         new JavaApplication2().indit();
@@ -28,16 +31,16 @@ public class JavaApplication2 {
     private void feltolt() {
         String formak[] = {"ász", "also", "felso", "x", "ix", "viii"};
         String szinek[] = {"piros", "zöld", "tök", "makk"};
-        
-        for (int j = 0; j < Pakli.length; j++) {
-            int i = 0;
-            for (int k = 0; k < szinek.length; k++) {
-                Pakli[j] = szinek[k] +;
+        for (String e : szinek) {
+            for (int i = 0; i < formak.length; i++) {
+                Pakli[i] = e + "_" + formak[i];
             }
         }
         kirak();
+        }
         
-    }
+        
+    
     
     private void kirak() {
         for (String elem : Pakli) {
@@ -46,7 +49,11 @@ public class JavaApplication2 {
     }
     
     private void melyik() {
-        
+        int szam = 0;
+        do {            
+            System.out.println("Melyik: ");
+            szam = sc.nextInt();
+        } while (szam < 1 && szam > 3);
     }
     
     private void kever() {
@@ -56,5 +63,5 @@ public class JavaApplication2 {
     private void ezVolt() {
         System.out.printf("Ez volt: %s.", Pakli[11]);
     }
-    
 }
+    
